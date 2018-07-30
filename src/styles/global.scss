@@ -1,0 +1,13 @@
+@import url('https://use.fontawesome.com/releases/v5.2.0/css/all.css');
+// 載入斯原黑體
+@import url(//fonts.googleapis.com/earlyaccess/notosanstc.css);
+
+@import './_utils.scss';
+
+html{
+  font-size: $baseFontSize;
+}
+body{
+  font-family: 'Noto Sans TC', sans-serif;
+  font-size: 1.6rem;
+}

@@ -3,32 +3,36 @@ import {
   BrowserRouter as Router,
   Link,
   Route,
-  Switch
+  Switch,
+  Redirect
 } from "react-router-dom";
+// bootstrap
 import 'bootstrap/dist/css/bootstrap.min.css';
+// self scss
 import "@/styles/global.scss";
-import Persons from '@/containers/Persons';
-import PhotoList from '@/containers/PhotoList';
+// self component
+import PageHome from '@/pages/PageHome';
+import PageProduct from '@/pages/PageProduct';
+import PageFooter from '@/pages/PageFooter';
+import PageHeader from '@/pages/PageHeader';
+// import Persons from '@/pages/Persons';
+// import PhotoList from '@/pages/PhotoList';
 
 
 class App extends Component {
   render() {
-
     return (
       <Router>
         <div className="App">
-          <ol>
-            <li>Turn this app into one which does NOT use local state (in components) but instead uses Redux</li>
-          </ol>
-          <ul>
-            <li>
-              <Link to="/photo-list">photo-list</Link>
-            </li>
-          </ul>
-          <Switch>
-            <Route exact path="/" render={(props) => <Persons {...props}/>} />
-            <Route exact path="/photo-list" render={(props) => <PhotoList {...props} />} />
-          </Switch>
+          <PageHeader />
+          <main className="PageContent">
+            <Switch>
+              <Route exact path="/" component={PageHome} />
+              <Route path="/product/:pid?" component={PageProduct} />
+              <Route path="*" render={props => <div>404</div>}/>
+            </Switch>
+          </main>
+          <PageFooter />
         </div>
       </Router>
     );
@@ -36,3 +40,19 @@ class App extends Component {
 }
 
 export default App;
+
+/*
+
+  <ol>
+    <li>Turn this app into one which does NOT use local state (in components) but instead uses Redux</li>
+  </ol>
+  <ul>
+    <li>
+      <Link to="/photo-list">photo-list</Link>
+    </li>
+  </ul>
+  <Switch>
+    <Route exact path="/" component={Persons} />
+    <Route exact path="/photo-list" component={PhotoList} />
+  </Switch>
+*/
