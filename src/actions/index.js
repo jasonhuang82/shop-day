@@ -1,4 +1,4 @@
-import { PERSON_ADD,PERSON_DEL ,LOAD_PHOTO_DATA} from "~/actions/actionType";
+import { PERSON_ADD,PERSON_DEL ,LOAD_PHOTO_DATA} from "@/actions/actionType";
 
 export const addPersonHandle = () => ({
   type: PERSON_ADD

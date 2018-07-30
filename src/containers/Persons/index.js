@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import Person from '~/components/Person';
-import AddPerson from '~/components/AddPerson';
+import Person from '@/components/Person';
+import AddPerson from '@/components/AddPerson';
+import "./style.scss";
 
-// import { PERSON_ADD, PERSON_DEL } from "~/actions/actionType";
-import { addPersonHandle, delPersonHandle} from "~/actions";
+// import { PERSON_ADD, PERSON_DEL } from "@/actions/actionType";
+import { addPersonHandle, delPersonHandle} from "@/actions";
 
 class Persons extends Component {
 

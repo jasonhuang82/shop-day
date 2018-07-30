@@ -6,9 +6,9 @@ import {
   Switch
 } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import "~/styles/global.scss";
-import Persons from '~/containers/Persons';
-import PhotoList from '~/containers/PhotoList';
+import "@/styles/global.scss";
+import Persons from '@/containers/Persons';
+import PhotoList from '@/containers/PhotoList';
 
 
 class App extends Component {
