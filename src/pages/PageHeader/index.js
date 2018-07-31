@@ -13,22 +13,26 @@ class PageHeader extends Component {
   render () {
     return (
       <header className="PageHeader">
-        <div className="PageHeaderLogo">
-          <Link to="/">
-            <img src="https://shoplineimg.com/564d7e76e36c8e2a49000003/56b1d67a69702d746b021500/x200.webp?source_format=png" alt="logo"/>
-          </Link>
-        </div>
-        <div className="PageHeaderInfos">
-          <ul className="PageHeaderIconList">
-            <li>
-              <i className="fas fa-user"></i>
-              <span>登入會員</span>
-            </li>
-            <li>
-              <i className="fas fa-shopping-cart"></i>
-              <span>購物車</span>
-            </li>
-          </ul>
+        <div className="container">
+          <div className="PageHeaderContainer">
+            <div className="PageHeaderLogo">
+              <Link to="/">
+                <img src="https://shoplineimg.com/564d7e76e36c8e2a49000003/56b1d67a69702d746b021500/x200.webp?source_format=png" alt="logo"/>
+              </Link>
+            </div>
+            <div className="PageHeaderInfos">
+              <ul className="PageHeaderIconList">
+                <li>
+                  <i className="fas fa-user"></i>
+                  <span>登入會員</span>
+                </li>
+                <li>
+                  <i className="fas fa-shopping-cart"></i>
+                  <span>購物車</span>
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
       </header>
     );
