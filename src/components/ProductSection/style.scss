@@ -1,0 +1,11 @@
+@import '~@/styles/_utils.scss';
+
+.ProductSection {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  .ProductSectionTitle{
+    margin-bottom: 15px;
+    font-size: 2rem;
+    font-weight: normal;
+  }
+}

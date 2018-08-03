@@ -20,18 +20,17 @@ class PageHeader extends Component {
                 <img src="https://shoplineimg.com/564d7e76e36c8e2a49000003/56b1d67a69702d746b021500/x200.webp?source_format=png" alt="logo"/>
               </Link>
             </div>
-            <div className="PageHeaderInfos">
-              <ul className="PageHeaderIconList">
+            <ul className="PageHeaderInfos">
                 <li>
-                  <i className="fas fa-user"></i>
-                  <span>登入會員</span>
+                  <i className="PageHeaderIcon fas fa-user"></i>
+                  <span className="PageHeaderTitle">登入會員</span>
                 </li>
                 <li>
-                  <i className="fas fa-shopping-cart"></i>
-                  <span>購物車</span>
+                  <i className="PageHeaderIcon fas fa-shopping-cart"></i>
+                  <span className="PageHeaderCartCount">1</span>
+                  <span className="PageHeaderTitle">購物車</span>
                 </li>
-              </ul>
-            </div>
+            </ul>
           </div>
         </div>
       </header>

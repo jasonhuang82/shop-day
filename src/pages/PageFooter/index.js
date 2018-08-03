@@ -12,29 +12,35 @@ class PageFooter extends Component {
     return (
       <footer className="PageFooter">
           <div className="container">
-            <div className="PageFooterList">
-              <ul>
-                <li>
-                  <a href="mailto:oneday.ec@gmail.com">聯絡我們</a>
-                </li>
+            <div className="row">
+              <div className="col-12 col-md-6">
+                <div className="PageFooterLinks">
+                  <div className="PageFooterLink">
+                    <a href="mailto:oneday.ec@gmail.com">聯絡我們</a>
+                  </div>
 
-                <li>
-                  <a href="https://www.facebook.com/goodlittleday" target="_blank">facebook</a>
-                </li>
+                  <div className="PageFooterLink">
+                    <a href="https://www.facebook.com/gooddivttleday" target="_blank">facebook</a>
+                  </div>
 
-                <li>
-                  <a href="http://www.oneday.com.tw/" target="_blank">小日子官網</a>
-                </li>
-              </ul>
+                  <div className="PageFooterLink">
+                    <a href="http://www.oneday.com.tw/" target="_blank">小日子官網</a>
+                  </div>
+                </div>
+              </div>
+              <div className="col-12 col-md-6">
+                <div className="PageFooterCompany">
+                  <a href="http://www.7-11.com.tw/" target="_blank">
+                    <img src="https://shoplineimg.com/assets/footer/card_tw_711_pay.png" alt="7-11" height="40" />
+                  </a>
+                  <a href="https://www.ecpay.com.tw/" target="_blank">
+                    <img src="https://shoplineimg.com/assets/footer/card_ecpay.png" alt="7-11" height="40" />
+                  </a>
+                </div>
+              </div>
             </div>
-            <div className="PageFooterCompany">
-              <a href="http://www.7-11.com.tw/" target="_blank">
-                <img src="https://shoplineimg.com/assets/footer/card_tw_711_pay.png" alt="7-11" height="40"/>
-              </a>
-              <a href="https://www.ecpay.com.tw/" target="_blank">
-                <img src="https://shoplineimg.com/assets/footer/card_ecpay.png" alt="7-11" height="40"/>
-              </a>
-            </div>
+            
+            
           </div>
       </footer>
     );
