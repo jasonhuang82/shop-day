@@ -1,0 +1,34 @@
+@import '~@/styles/_utils.scss';
+
+.DropDownLists {
+  
+  .btn-secondary{
+    &,
+    &:hover,
+    &:active,
+    &:not(:disabled):not(.disabled).active,
+    &:not(:disabled):not(.disabled):active ,
+    &:not(:disabled):not(.disabled).active:focus,
+    &:not(:disabled):not(.disabled):active:focus{
+      background-color: transparent !important;
+      color: $color-primary-black !important;
+      box-shadow: none !important;
+      border:none !important;
+    }
+    
+    & {
+      font-size: 1.6rem;
+      span.DropDownListsTitle {
+        margin-right: 5px;
+      }
+    }
+  }
+
+  
+  .dropdown-menu {
+    font-size: 1.4rem;
+  }
+  .dropdown-item{
+    font-weight: 300;
+  }
+}

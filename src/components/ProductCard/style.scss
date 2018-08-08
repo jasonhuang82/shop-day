@@ -6,36 +6,65 @@
   &{
     margin-bottom: 15px;
     border-radius: 5px;
+    box-shadow: 0px 5px 10px 0px rgba(#000,.5);
     overflow: hidden;
   }
+  // 卡片上方圖片
   .CardCover{
+    @include backgroundReset('https://fakeimg.pl/700x700/');
     width: 100%;
     padding-bottom: 70%;
-    @include backgroundReset('http://via.placeholder.com/800x800');
+    background-color: $color-border-darken-gray;
+    background-size: 100%;
+    transition: background-size .3s linear;
+    &:hover{
+      background-size: 130%;
+    }
   }
-  .CardPrice{
-    font-size: 1.4rem;
-  }
-
+  
+  // 卡片下方資訊
   .CardInfos {
-    border: 1px solid #dddddd;
+    position: relative;
+    border: 1px solid $color-border-darken-gray;
+    border-top: 0px;
     border-radius: 0px 0px 5px 5px;
     padding: 10px;
-    padding-top: 0;
-    line-height: 1.6;
+    background-color: #fff;
+    line-height: 1.8;
     .CardTitle{
-      padding: 5px 0px;
+      margin-bottom: 10px;
+      font-size: 2rem;
+      font-weight: 300;
+    }
+    &::before{
+      content: '';
+      display: block;
+      width: 100%;
+      height: 5px;
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      background-color: var(--info);
     }
   }
-  // 有打折情況
-  &.isDiscount{
-    .CardPriceOrigin{
-      text-decoration: line-through;
-    }
-    .CardPriceDiscount{
+
+  // wrap CardPrice group
+  .CardProductInfo{
+    font-size: 1.4rem;
+  }
+  // 價錢區塊
+  .CardPrice {
+    
+    &.CardPriceDiscount {
       color: $color-discount;
     }
+    // 有打折情況
+    &.CardPriceOrigin {
+      text-decoration: line-through;
+    }
+    
   }
+  
 
   
 }

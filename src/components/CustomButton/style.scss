@@ -1,0 +1,18 @@
+@import '~@/styles/_utils.scss';
+
+.CustomButton {
+  display: block;
+  width: 100%;
+  margin: 15px 0px;
+  padding: 5px 15px;
+  font-size: 1.4rem;
+  
+  &,
+  &:focus,
+  &:active{
+    outline: none;
+    box-shadow: none;
+    border: none;
+  }
+
+}

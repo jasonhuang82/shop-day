@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from "styled-components";
 import './style.scss';
-
+import CustomButton from '@/components/CustomButton';
 
 // const CardCover = styled.div`
 //   background-size: cover;
@@ -18,9 +18,15 @@ const ProductCard = (props) => (
     <div className="CardCover"></div>
     <div className="CardInfos">
       <div className="CardTitle">小日子大書袋</div>
-      <div className="CardPrice CardPriceOrigin">NT$220</div>
-      <div className="CardPrice CardPriceDiscount" >NT$220</div>
-      <button className="btn btn-red">+加入購物車</button>
+      <div className="CardProductInfo">
+        <div className="CardPrice CardPriceOrigin">售價 : NT$220</div>
+        <div className="CardPrice CardPriceDiscount" >打折後 : NT$220</div>
+        <div className="CardProductStock">庫存 : 10</div>
+      </div>
+      <CustomButton
+        title="+加入購物車"
+        className={['btn-info']}
+      />
     </div>
   </div>
 );

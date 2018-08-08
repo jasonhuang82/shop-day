@@ -1,0 +1,29 @@
+@import '~@/styles/_utils.scss';
+
+.CustomInput {
+  &{
+    margin-bottom: 15px;
+    border: 1px solid $color-border-gray;
+    border-radius: 5px; 
+    padding: 5px;
+  }
+  input{
+    &,&:focus{
+      font-size: 1.4rem;
+      outline: none;
+      box-shadow: none;
+      border: none;
+    }
+  }
+
+  .input-group{
+    display: flex;
+    align-items: stretch;
+  }
+  .input-group-prepend{
+    @extend %flex-center;
+    padding: 5px;
+  }
+
+  
+}

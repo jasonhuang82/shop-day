@@ -4,11 +4,19 @@ $breakpoint-md: 768px;
 $breakpoint-lg: 992px;
 $breakpoint-xl: 1200px;
 
+// color
 $color-primary-black: #444;
 $color-border-gray: #eee;
+$color-border-darken-gray: #ddd;
 $color-discount:#c0392b;
 $color-primary-background: #f8f8f8;
 
+
+%flex-center{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 @mixin media-sm {
   @media (min-width: $breakpoint-sm) {

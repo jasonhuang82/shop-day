@@ -6,6 +6,32 @@
   .ProductSectionTitle{
     margin-bottom: 15px;
     font-size: 2rem;
-    font-weight: normal;
+  }
+
+  ul.ProductFliter{
+    @extend %flex-center;
+    li{
+      @extend %flex-center;
+      margin-right: 10px;
+      span.ProductFliterTitle {
+        margin-right: 5px;
+      }
+    }
+  }
+
+
+  @include media-md{
+    // pc 搜尋列
+    .ProductSectionControl{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .ProductSearch{
+        width: 40%;
+      }
+      .CustomInput {
+        margin-bottom: 0;
+      }
+    }
   }
 }
