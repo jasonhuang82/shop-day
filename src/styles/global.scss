@@ -24,3 +24,14 @@ ul{
   margin: 0;
   list-style: none;
 }
+
+
+@for $i from 1 through 12{
+  .col-#{$i}{
+    margin-bottom: 40px;
+  }
+}
+
+.PageContent{
+  padding-top: 85px;
+}

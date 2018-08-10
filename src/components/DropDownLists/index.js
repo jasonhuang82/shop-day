@@ -12,26 +12,31 @@ import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap
 
 export default class DropDownLists extends React.Component {
   static defaultProps = {
-    defaultSelect: 0,
+    selectIndex: 0,
     selectItemsData: [
       { title:'分類' , value: ''},
       { title: '分類1', value: '1' },
       { title: '分類2', value: '2' }
     ],
-    onToggle(openState){
-      console.log('onToggle');
+    onChange(value) {
+      console.log('onChange', value);
     }
   };
   state = {
-    currentSelect: this.props.defaultSelect,
+    currentSelect: this.props.selectIndex,
     dropdownOpen: false
   };
+
+  componentWillReceiveProps(nextProps) {
+    if (this.props.selectIndex !== nextProps.selectIndex){
+      this.setState({
+        currentSelect: nextProps.selectIndex
+      })
+    }
+  }
+
   toggle = () => {
-    let { currentSelect } = this.state;
-    let { selectItemsData } = this.props;
-    this.setState(prevState => ({
-      dropdownOpen: !prevState.dropdownOpen
-    }), () => this.props.onToggle(this.state.dropdownOpen, selectItemsData[currentSelect].value));
+    this.setState(prevState => ({ dropdownOpen: !prevState.dropdownOpen }));
   }
 
   render() {
@@ -47,8 +52,13 @@ export default class DropDownLists extends React.Component {
             {selectItemsData.map((selectItem,index) => (
               <DropdownItem 
                 key={index}
-                onClick={e => {
-                  this.setState({ currentSelect: index})
+                onClick={async () => {
+                  console.log('click');
+                  let { selectItemsData }= this.props;
+                  // 將 dropdown 的開啟狀態以及值丟給 onChange 父層 callback做更新父層state 使用
+                  await this.setState({ currentSelect: index})
+                  
+                  this.props.onChange(selectItemsData[index].value);
                 }}
               >{selectItem.title}</DropdownItem>
             ))}

@@ -6,7 +6,7 @@ class PageFooter extends Component {
 
 
   componentDidMount() {
-    console.log('match',this.props.match);   
+    // console.log('match',this.props.match);   
   }
   render () {
     return (

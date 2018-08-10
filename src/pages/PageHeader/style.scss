@@ -1,12 +1,22 @@
 @import '~@/styles/_utils.scss';
 
 .PageHeader{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
   border-bottom: 1px solid $color-border-gray;
+  background-color: #fff;
+  z-index: 10;
   .PageHeaderContainer{
     display: flex;
     // padding: 15px 0px;
     justify-content: space-between;
     align-items: center;
+  }
+
+  i.fa-shopping-cart{
+    transform: scale(1);
   }
   ul.PageHeaderInfos{
     display: flex;
@@ -23,6 +33,8 @@
     }
     // 購物車內購買數量
     .PageHeaderCartCount{
+      display: inline-block;
+      margin-left: 5px;
       font-size: 1.4rem;
     }
 

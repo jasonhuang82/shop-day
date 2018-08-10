@@ -1,0 +1,21 @@
+@import '~@/styles/_utils.scss';
+
+.ProductAnimateCard {
+  @include backgroundReset('');
+  width: 70px;
+  height: 100px;
+  position: fixed;
+  top: 15px;
+  right: 10px;
+  background-color: $color-border-gray;
+  pointer-events: none;
+  z-index: 20;
+  transform: scale(0.5);
+  opacity: 0;
+  @include media-sm {
+    right: 10%;
+  }
+  @include media-md {
+    right: 13%;
+  }
+}

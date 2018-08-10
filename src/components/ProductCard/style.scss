@@ -1,13 +1,28 @@
 @import '~@/styles/_utils.scss';
 
-
-
 .ProductCard {
   &{
-    margin-bottom: 15px;
+    position: relative;
     border-radius: 5px;
-    box-shadow: 0px 5px 10px 0px rgba(#000,.5);
+    box-shadow: 0px 3px 15px 0px rgba(#000, 0.1);
     overflow: hidden;
+    transition: transform 0.3s;
+    transform: translate(0px,0px);
+    &:hover{
+      transform: translate(-5px, -5px);
+    }
+
+
+    &::before {
+      content: '';
+      display: block;
+      width: 100%;
+      height: 5px;
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      background-color: var(--info);
+    }
   }
   // 卡片上方圖片
   .CardCover{
@@ -24,9 +39,9 @@
   
   // 卡片下方資訊
   .CardInfos {
-    position: relative;
     border: 1px solid $color-border-darken-gray;
     border-top: 0px;
+    border-bottom: 0px;
     border-radius: 0px 0px 5px 5px;
     padding: 10px;
     background-color: #fff;
@@ -36,15 +51,12 @@
       font-size: 2rem;
       font-weight: 300;
     }
-    &::before{
-      content: '';
-      display: block;
-      width: 100%;
-      height: 5px;
-      position: absolute;
-      bottom: -1px;
-      left: 0;
+    .CardMarkText{
+      display: inline-block;
+      color: #fff;
       background-color: var(--info);
+      line-height: 1;
+      padding: 3px;
     }
   }
 
@@ -55,12 +67,18 @@
   // 價錢區塊
   .CardPrice {
     
-    &.CardPriceDiscount {
+    &.CardPriceRed {
       color: $color-discount;
     }
-    // 有打折情況
-    &.CardPriceOrigin {
+    // 有打折原價刪除線
+    &.CardPriceLineThrough {
       text-decoration: line-through;
+    }
+    // 打折區塊
+    &.CardPriceDiscount{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
     }
     
   }

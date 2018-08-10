@@ -1,4 +1,5 @@
 import React, { Component,Fragment } from 'react';
+import { connect } from 'react-redux';
 import { 
   BrowserRouter as Router,
   Link,
@@ -6,6 +7,8 @@ import {
   Switch,
   Redirect
 } from "react-router-dom";
+import { getImgAbsUrl } from '@/config/reUseMethod';
+
 // bootstrap
 import 'bootstrap/dist/css/bootstrap.min.css';
 // self scss
@@ -15,6 +18,7 @@ import PageHome from '@/pages/PageHome';
 import PageProduct from '@/pages/PageProduct';
 import PageFooter from '@/pages/PageFooter';
 import PageHeader from '@/pages/PageHeader';
+import ProductAnimateCard from '@/components/ProductAnimateCard';
 // import Persons from '@/pages/Persons';
 // import PhotoList from '@/pages/PhotoList';
 
@@ -33,14 +37,31 @@ class App extends Component {
             </Switch>
           </main>
           <PageFooter />
+          <ProductAnimateCard 
+            imgUrl={
+              this.props.productListDatas.length >0
+              ? getImgAbsUrl(this.props.productListDatas[this.props.productAnimateCardIndex].coverName)
+              : ''
+            }
+          />
         </div>
       </Router>
     );
   }
 }
 
-export default App;
+const mapStateToProps = state => {
+  return {
+    productListDatas: state.productListDatas,
+    productAnimateCardIndex: state.productAnimateCardIndex
+  }
+};
 
+const mapDispatchToProps = dispatch => {
+  return {}
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
 /*
 
   <ol>

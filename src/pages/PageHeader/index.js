@@ -7,7 +7,7 @@ class PageHeader extends Component {
 
 
   componentDidMount() {
-    console.log('match',this.props.match);
+    // console.log('match',this.props.match);
     
   }
   render () {
@@ -22,13 +22,15 @@ class PageHeader extends Component {
             </div>
             <ul className="PageHeaderInfos">
                 <li>
-                  <i className="PageHeaderIcon fas fa-user"></i>
-                  <span className="PageHeaderTitle">登入會員</span>
+                  <i className="PageHeaderIcon fas fa-home"></i>
+                  <span className="PageHeaderTitle">購物商城</span>
                 </li>
                 <li>
                   <i className="PageHeaderIcon fas fa-shopping-cart"></i>
-                  <span className="PageHeaderCartCount">1</span>
                   <span className="PageHeaderTitle">購物車</span>
+                  <span className="PageHeaderCartCount">
+                    {this.props.shopCart.length > 0 && this.props.shopCart.length}
+                  </span>
                 </li>
             </ul>
           </div>
@@ -40,17 +42,13 @@ class PageHeader extends Component {
 
 
 const mapStateToProps = (state) => {
-  // console.log('state',state);
-  
   return {
-    // persons: state.persons
+    shopCart: state.shopCart
   }
 }
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    // addPerson: () => dispatch(addPersonHandle()),
-    // delPerson: (personID) => dispatch(delPersonHandle(personID))
   }
 }
 

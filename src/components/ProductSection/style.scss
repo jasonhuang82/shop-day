@@ -8,12 +8,12 @@
     font-size: 2rem;
   }
 
-  ul.ProductFliter{
+  ul.ProductFilter{
     @extend %flex-center;
     li{
       @extend %flex-center;
       margin-right: 10px;
-      span.ProductFliterTitle {
+      span.ProductFilterTitle {
         margin-right: 5px;
       }
     }
