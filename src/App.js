@@ -2,7 +2,6 @@ import React, { Component,Fragment } from 'react';
 import { connect } from 'react-redux';
 import { 
   BrowserRouter as Router,
-  Link,
   Route,
   Switch,
   Redirect
@@ -22,11 +21,26 @@ import ProductAnimateCard from '@/components/ProductAnimateCard';
 // import Persons from '@/pages/Persons';
 // import PhotoList from '@/pages/PhotoList';
 
-
+const baseName = (() => {
+  switch (process.env.NODE_ENV) {
+    case 'development':
+      return '/';
+    case 'production':
+      return '/shop-day'
+    default:
+      return '/';
+  };
+})();
 class App extends Component {
+  
+  componentDidMount (){
+    console.log('====================================');
+    console.log(baseName);
+    console.log('====================================');
+  }
   render() {
     return (
-      <Router>
+      <Router baseName={baseName}>
         <div className="App">
           <PageHeader />
           <main className="PageContent">

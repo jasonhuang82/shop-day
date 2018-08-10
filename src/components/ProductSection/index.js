@@ -127,6 +127,15 @@ class ProductSection extends Component {
     });
   }
 
+  // 去除正則式特殊字元給過濾回傳regex物件供關鍵字使用
+  replaceRegSpecialString = preProcessString => {
+    let regString = preProcessString.trim().replace(/[`~!@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/]/gi, '');
+    if (regString === '') 
+      return null;
+    else 
+      return new RegExp(regString, 'ig');
+  }
+
   // 經過預處理 過濾完排序完搜尋完的資料再丟給切分頁
   processProductDatas = () => {
     // 設定排序規則
@@ -153,10 +162,9 @@ class ProductSection extends Component {
         let { searchText } = this.state;
         if (searchText.trim() !== '') {
           let str = product.title;
-          let reg = new RegExp(searchText.trim(), 'ig');
-
-          // str.match(reg)
-          return reg.test(str);
+          let reg = this.replaceRegSpecialString(searchText.trim());
+          // 經過去除特殊字元後要判斷是否去除完只剩空字串，若是會回傳 null，則不進行比對
+          if (reg) return reg.test(str);
         };
         return true;
       })
@@ -165,10 +173,13 @@ class ProductSection extends Component {
         let { searchText } = this.state;
         if (searchText.trim() !== '') {
           let str = product.title;
-          let reg = new RegExp(searchText.trim(), 'ig');
-          // 符合的字串
-          const [matchStr] = str.match(reg);
-          product.title = product.title.replace(matchStr, `<span class='CardMarkText'>${matchStr}</span>`)
+          let reg = this.replaceRegSpecialString(searchText.trim());
+          // 經過去除特殊字元後要判斷是否去除完只剩空字串，若是會回傳 null，則不進行關鍵字mark
+          if (reg){
+            // 符合的字串
+            const [matchStr] = str.match(reg);
+            product.title = product.title.replace(matchStr, `<span class='CardMarkText'>${matchStr}</span>`)
+          }
         };
         return product;
       });
