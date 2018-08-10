@@ -268,17 +268,23 @@ class ProductSection extends Component {
               </li>
           </ul>
         </div>
-        <div className="row">
-          {this.renderProductCards()}
-        </div>
-        {/*分頁 組件*/}
-        <Pagination
-          currentPage={this.state.currentPageIndex}
-          totlePage={this.getTotoalPageCount()}
-          onPageChange={pageCount => this.changePagePosition(pageCount)}
-          onPrev={pageStep => this.stepPagePosition(pageStep)}
-          onNext={pageStep => this.stepPagePosition(pageStep)}
-        />
+        {this.processProductDatas().length > 0
+          ? (
+            <div className="ProductSectionShopList">
+              <div className="row">
+                {this.renderProductCards()}
+              </div>
+              {/*分頁 組件*/}
+              <Pagination
+                currentPage={this.state.currentPageIndex}
+                totlePage={this.getTotoalPageCount()}
+                onPageChange={pageCount => this.changePagePosition(pageCount)}
+                onPrev={pageStep => this.stepPagePosition(pageStep)}
+                onNext={pageStep => this.stepPagePosition(pageStep)}
+              />
+            </div>)
+          : <h3 className="d-flex justify-content-center align-items-center">找無符合資料</h3>
+        }
         
       </section>  
     );

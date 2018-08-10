@@ -21,10 +21,16 @@
   ul.PageHeaderInfos{
     display: flex;
     align-items: center;
-    li{
+
+
+    a{
+      display: inline-block;
+      color: $color-primary-black;
+      text-decoration: none;
       padding: 30px 15px;
       cursor: pointer;
     }
+
     .PageHeaderIcon{
       font-size: 20px;
     }

@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
-import { Link } from "react-router-dom";
+import { Link,withRouter } from "react-router-dom";
 import { connect } from 'react-redux';
 import "./style.scss";
 
 class PageHeader extends Component {
 
 
-  componentDidMount() {
-    // console.log('match',this.props.match);
+  componentDidMount = () => {
+    // console.log('match',this.props);
     
   }
   render () {
@@ -22,15 +22,27 @@ class PageHeader extends Component {
             </div>
             <ul className="PageHeaderInfos">
                 <li>
-                  <i className="PageHeaderIcon fas fa-home"></i>
-                  <span className="PageHeaderTitle">購物商城</span>
+                  <Link to={{
+                    pathname: '/',
+                    search: this.props.location.search
+                  }}>
+                    <i className="PageHeaderIcon fas fa-home"></i>
+                    <span className="PageHeaderTitle">購物商城</span>
+                  </Link>
                 </li>
                 <li>
-                  <i className="PageHeaderIcon fas fa-shopping-cart"></i>
-                  <span className="PageHeaderTitle">購物車</span>
-                  <span className="PageHeaderCartCount">
-                    {this.props.shopCart.length > 0 && this.props.shopCart.length}
-                  </span>
+                  <Link
+                    to={{
+                      pathname: '/shopcart',
+                      search: this.props.location.search
+                    }}
+                  >
+                    <i className="PageHeaderIcon fas fa-shopping-cart"></i>
+                    <span className="PageHeaderTitle">購物車</span>
+                    <span className="PageHeaderCartCount">
+                      {this.props.shopCart.length > 0 && this.props.shopCart.length}
+                    </span>
+                  </Link>
                 </li>
             </ul>
           </div>
@@ -52,6 +64,6 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(PageHeader)
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(PageHeader));
 
 

@@ -15,7 +15,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import "@/styles/global.scss";
 // self component
 import PageHome from '@/pages/PageHome';
-import PageProduct from '@/pages/PageProduct';
+import PageShopCart from '@/pages/PageShopCart';
 import PageFooter from '@/pages/PageFooter';
 import PageHeader from '@/pages/PageHeader';
 import ProductAnimateCard from '@/components/ProductAnimateCard';
@@ -32,7 +32,7 @@ class App extends Component {
           <main className="PageContent">
             <Switch>
               <Route exact path="/" component={PageHome} />
-              <Route path="/product/:pid?" component={PageProduct} />
+              <Route path="/shopcart" component={PageShopCart} />
               <Route path="*" render={props => <div>404</div>}/>
             </Switch>
           </main>

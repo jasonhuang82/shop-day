@@ -1,0 +1,27 @@
+@import '~@/styles/_utils.scss';
+
+.PageShopCart {
+  padding: 30px 0px;
+  .PageShopCartTitle{
+    margin-bottom: 30px;
+    border-bottom: 2px solid var(--info);
+    padding: 15px 0px;
+    font-size: 2rem;
+    font-weight: normal;
+  }
+  .PageShopCartNoProduct{
+    @extend %flex-center;
+    color: #bbb;
+    flex-flow: row wrap;
+    font-size: 2rem;
+    font-weight: normal;
+    user-select: none;
+    > div{
+      width: 100%;
+      text-align: center;
+    }
+    .PageShopCartNoProductIcon{
+      font-size: 7rem;
+    }
+  }
+}
