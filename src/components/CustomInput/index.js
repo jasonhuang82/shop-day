@@ -25,7 +25,7 @@ class CustomInput extends Component {
   }
 
   handleComposition = e => {
-    console.log(e.type);
+    // console.log(e.type);
     if (e.type === "compositionend") {
       // composition is end
       this.isOnComposition = false;
@@ -34,7 +34,7 @@ class CustomInput extends Component {
         !this.isOnComposition
       ) {
         //進行搜尋
-        console.log("onChange compositionend");
+        // console.log("onChange compositionend");
         this.props.onChange(e);
       }
     } else {
@@ -78,79 +78,3 @@ class CustomInput extends Component {
 }
 
 export default CustomInput;
-
-// <InputGroup>
-//   <InputGroupAddon addonType="prepend">
-//     <i className="fas fa-search"></i>
-//   </InputGroupAddon>
-//   <Input
-//     ref={el => this.inputDom = el}
-//     placeholder={placeholder}
-//     defaultValue={inputText}
-//     // value={inputText}
-//     onChange={this.handleChange}
-//     onCompositionStart={this.handleComposition}
-//     onCompositionUpdate={this.handleComposition}
-//     onCompositionEnd={this.handleComposition}
-//   />
-// </InputGroup>
-// const CustomInput = ({ onChange,inputText,placeholder }) => {
-//   let isOnComposition = false;
-//   const inputDom ;
-//   const isChrome = !!window.chrome && !!window.chrome.webstore
-//   const handleComposition = (e) => {
-//     console.log(e.type);
-//     if (e.type === 'compositionend') {
-//       // composition is end
-//       isOnComposition = false
-//       if (e.target instanceof HTMLInputElement && !isOnComposition && isChrome) {
-//         //進行搜尋
-//         console.log('onChange compositionend');
-//         onChange(e);
-//       }
-//     } else {
-//       // in composition
-//       isOnComposition = true
-//     }
-//   }
-
-//   const handleChange = (e) => {
-//     // only when onComposition===false to fire onChange
-//     if (e.target instanceof HTMLInputElement && !isOnComposition) {
-//       console.log('onChange');
-      
-//       onChange(e);
-//     }
-//   }
-//   return (
-//     <div className="CustomInput">
-//     <InputGroup>
-//       <InputGroupAddon addonType="prepend">
-//         <i className="fas fa-search"></i>
-//         </InputGroupAddon>
-//         <Input 
-//           ref={el => inputDom = el}
-//           placeholder={placeholder}
-//           defaultValue={inputText}
-//           // value={inputText}
-//           onChange={handleChange}
-//           onCompositionStart={handleComposition}
-//           onCompositionUpdate={handleComposition}
-//           onCompositionEnd={handleComposition}
-//         />
-//       </InputGroup>
-//     </div>
-//   );
-// };
-// CustomInput.defaultProps = {
-//   onChange(e){
-//     console.log('onchange');
-    
-//   },
-//   inputText: '',
-//   placeholder: 'username'
-// }
-
-
-
-// export default CustomInput;

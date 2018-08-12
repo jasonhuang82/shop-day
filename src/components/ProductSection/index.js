@@ -212,7 +212,7 @@ class ProductSection extends Component {
           coverUrl={getImgAbsUrl(product.coverName)}
           onCartBtnClick={e => {
             const target = e.target;
-            // addProductToCart
+            // 動畫做完之後才能繼續加入購物車，不然TweenMax 會延遲做動畫
             if (this.isFinishAddCart === false) return ;
             this.isFinishAddCart = false;
             // 先換圖
@@ -234,7 +234,8 @@ class ProductSection extends Component {
               }
             });
             // 將click到產品加入cart
-            this.props.addProductToCart(product);
+            let originProduct = this.props.productListDatas.find(productData => productData.pid === product.pid);
+            this.props.addProductToCart(originProduct);
           }}
         />
       </div>

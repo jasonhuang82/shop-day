@@ -1,5 +1,8 @@
 import React from 'react';
 import cx from 'classnames';
+// 要使用 TweenLite 的scrollTo 功能必須載入下方 ScrollToPlugin 才可運作
+import { TweenLite } from "gsap/TweenMax";
+import ScrollToPlugin from "gsap/ScrollToPlugin";
 import './style.scss';
 
 const Pagination = ({ currentPage, totlePage, onPageChange, onPrev, onNext}) => {
@@ -13,11 +16,23 @@ const Pagination = ({ currentPage, totlePage, onPageChange, onPrev, onNext}) => 
     return totalPageCount
   }
   
+  const windowScrolToTop = () => {
+    TweenLite.to(window, 0.3, {
+      scrollTo: {
+        x: 0,
+        y: 0
+      }
+    })
+  };
+
   return (
     <div className="Pagination">
       <div 
         className="PaginationPrev"
-        onClick={e => onPrev(-1)}
+        onClick={e => {
+          windowScrolToTop();
+          onPrev(-1)
+        }}
       >
         <i className="fas fa-chevron-left"></i>
       </div>
@@ -25,14 +40,20 @@ const Pagination = ({ currentPage, totlePage, onPageChange, onPrev, onNext}) => 
           <div 
             className={cx('PaginationPageCount',{ isActive: page === currentPage })} 
             key={pageIdx}
-            onClick={e => onPageChange(page)}
+            onClick={e => {
+              windowScrolToTop();
+              onPageChange(page);
+            }}
           >
             <span>{page+1}</span>
           </div>
       ))}
       <div 
         className="PaginationNext"
-        onClick={e => onNext(1)}
+        onClick={e => {
+          windowScrolToTop();
+          onNext(1)
+        }}
       >
         <i className="fas fa-chevron-right"></i>
       </div>

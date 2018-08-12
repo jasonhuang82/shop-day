@@ -25,13 +25,22 @@ ul{
   list-style: none;
 }
 
-
+// 將所有col下方保留margin-bottom
 @for $i from 1 through 12{
   .col-#{$i}{
     margin-bottom: 40px;
   }
 }
 
+.App{
+  // 為了讓內容不夠時不要讓網頁下方有留白，
+  // 所以讓 App 撐滿畫面，再用flex特性讓 PageContent 去吃多的留白空間
+  display: flex;
+  flex-flow: column nowrap;
+  min-height: 100vh;
+}
+
 .PageContent{
+  flex-grow: 1;
   padding-top: 85px;
 }

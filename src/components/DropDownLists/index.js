@@ -53,11 +53,9 @@ export default class DropDownLists extends React.Component {
               <DropdownItem 
                 key={index}
                 onClick={async () => {
-                  console.log('click');
                   let { selectItemsData }= this.props;
                   // 將 dropdown 的開啟狀態以及值丟給 onChange 父層 callback做更新父層state 使用
                   await this.setState({ currentSelect: index})
-                  
                   this.props.onChange(selectItemsData[index].value);
                 }}
               >{selectItem.title}</DropdownItem>

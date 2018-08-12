@@ -1,0 +1,86 @@
+@import '~@/styles/_utils.scss';
+
+.ShopCartList {
+  // wrap CardPrice group
+  &{
+    font-size: 1.4rem;
+  }
+
+  li.ShopCartListItem{
+    display: flex;
+    align-items: stretch;
+    position: relative;
+    padding: 15px 0px;
+    +li{
+      border-top: 1px solid $color-border-gray;
+    }
+    &:hover,&.ShopCartListShowDelBtn{
+      .ShopCartListDel{
+        flex-shrink: 0;
+        width: 15%;
+        @include media-sm{
+          width: 10%;
+        }
+      }
+    }
+  }
+  // 卡片左邊圖片
+  .ShopCartListImg{
+    @include backgroundReset('https://fakeimg.pl/700x700/');
+    width: 30%;
+    flex-shrink: 0;
+    background-color: $color-border-darken-gray;
+    padding-bottom: 30%;
+    @include media-md{
+      padding-bottom: 15%;
+      width: 15%;
+    }
+  }
+
+  // 右邊資訊區塊
+  .ShopCartListdesc{
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px 15px;
+
+    @include media-md{
+      padding-right: 30px;
+    }
+  }
+  .ShopCartListTitle{
+    min-height: 10rem;
+    margin-bottom: 10px;
+    font-size: 2rem;
+    @include media-sm{
+      margin-bottom: 0;
+      min-height: 6rem;
+    }
+  }
+  // 右邊價錢區塊
+  .ShopCartListPrice {
+    font-size: 1.6rem;
+    &.ShopCartListPriceRed {
+      color: $color-discount;
+    }
+    // 有打折原價刪除線
+    &.ShopCartListPriceLineThrough {
+      text-decoration: line-through;
+    }
+    // 打折區塊
+    &.ShopCartListPriceDiscount{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+  // 刪除 btn
+  .ShopCartListDel{
+    display: inline-block;
+    width: 0px;
+    margin: 0px;
+    padding: 0;
+    transition: width 0.3s;
+  }
+}

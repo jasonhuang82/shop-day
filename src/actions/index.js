@@ -4,7 +4,8 @@ import {
   LOAD_PHOTO_DATA,
   GET_PRODUCT_DATA,
   CHANGE_ANIMATE_CARD_IMG,
-  ADD_TO_CART
+  ADD_TO_CART,
+  DELETE_FROM_CART
 } from "@/actions/actionType";
 
 export const addPersonHandle = () => ({
@@ -36,4 +37,10 @@ export const changeAnimateCartImg = (productId, productDatas) => ({
 export const addProductToCart = (product) => ({
   type: ADD_TO_CART,
   product
+})
+
+// 從購物車刪除
+export const delFromCart = productIndex => ({
+  type: DELETE_FROM_CART,
+  productIndex
 })
