@@ -46,7 +46,7 @@
       "price": 95,
       "discount": 0.5,
       "stock": 3,
-      "category": "life",
+      "category": "bag",
       "popular": 50
     },
 
@@ -121,7 +121,7 @@
       "title": "Have a Ball 香水滾珠瓶",
       "price": 279,
       "discount": 1,
-      "category": "cup",
+      "category": "life",
       "popular": 20
     },
     {
@@ -159,7 +159,7 @@
       "title": "小日子4our-You包 (共4款)",
       "price": 1095,
       "discount": 0.8,
-      "category": "life",
+      "category": "bag",
       "popular": 30
     },
     {

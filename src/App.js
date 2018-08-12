@@ -4,7 +4,8 @@ import {
   BrowserRouter as Router,
   Route,
   Switch,
-  Redirect
+  Redirect,
+  withRouter
 } from "react-router-dom";
 import { getImgAbsUrl } from '@/config/reUseMethod';
 
@@ -33,14 +34,9 @@ const baseName = (() => {
 })();
 class App extends Component {
   
-  componentDidMount (){
-    console.log('====================================');
-    console.log(baseName);
-    console.log('====================================');
-  }
   render() {
     return (
-      <Router baseName={baseName}>
+      <Router basename={process.env.PUBLIC_URL}>
         <div className="App">
           <PageHeader />
           <main className="PageContent">

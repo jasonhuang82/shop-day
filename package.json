@@ -1,8 +1,8 @@
 {
   "name": "shop-day",
-  "homepage": "https://jasonhuang82.github.io/shop-day/",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://jasonhuang82.github.io/shop-day",
   "dependencies": {
     "autoprefixer": "7.1.2",
     "axios": "^0.18.0",

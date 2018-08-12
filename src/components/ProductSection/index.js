@@ -58,6 +58,17 @@ class ProductSection extends Component {
     });
   }
   
+  componentDidUpdate(prevProps, prevState) {
+    // 因為分類下拉與快速搜尋功能都會影響頁數
+    // 若目前在第3頁結果搜尋完只有2頁，就不合理
+    // 所以這兩個有變更時就應該將目前頁數歸0
+    const isDiffFilterSelectIndex = prevState.filterSelectIndex !== this.state.filterSelectIndex;
+    const isDiffSearchText = prevState.searchText !== this.state.searchText;
+    (isDiffFilterSelectIndex || isDiffSearchText) && this.setState({ currentPageIndex: 0 });
+    
+  }
+  
+
   // computed
   // 取得要有幾頁
   getTotoalPageCount = () => {
@@ -256,7 +267,7 @@ class ProductSection extends Component {
                   onChange={async (value) => {
                     // onchange 時，把sort資料更新state並記錄到url
                     let filterSelectIndex = this.findMapFilterValueIndex(value);
-                    await this.setState({ filterSelectIndex });
+                    await this.setState({ filterSelectIndex});
                     this.recordDataToQuery({ filterValue: this.getMapFilterData() })
                   }}
                 />
