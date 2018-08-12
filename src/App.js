@@ -14,47 +14,38 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 // self scss
 import "@/styles/global.scss";
 // self component
+import ScrollToTop from '@/components/ScrollToTop';
 import PageHome from '@/pages/PageHome';
 import PageShopCart from '@/pages/PageShopCart';
 import PageFooter from '@/pages/PageFooter';
 import PageHeader from '@/pages/PageHeader';
 import ProductAnimateCard from '@/components/ProductAnimateCard';
-// import Persons from '@/pages/Persons';
-// import PhotoList from '@/pages/PhotoList';
 
-const baseName = (() => {
-  switch (process.env.NODE_ENV) {
-    case 'development':
-      return '/';
-    case 'production':
-      return '/shop-day'
-    default:
-      return '/';
-  };
-})();
 class App extends Component {
   
   render() {
     return (
       <Router basename={process.env.PUBLIC_URL}>
-        <div className="App">
-          <PageHeader />
-          <main className="PageContent">
-            <Switch>
-              <Route exact path="/" component={PageHome} />
-              <Route path="/shopcart" component={PageShopCart} />
-              <Route path="*" render={props => <div>404</div>}/>
-            </Switch>
-          </main>
-          <PageFooter />
-          <ProductAnimateCard 
-            imgUrl={
-              this.props.productListDatas.length >0
-              ? getImgAbsUrl(this.props.productListDatas[this.props.productAnimateCardIndex].coverName)
-              : ''
-            }
-          />
-        </div>
+        <ScrollToTop>
+          <div className="App">
+            <PageHeader />
+            <main className="PageContent">
+              <Switch>
+                <Route exact path="/" component={PageHome} />
+                <Route path="/shopcart" component={PageShopCart} />
+                <Route path="*" render={props => <div>404</div>}/>
+              </Switch>
+            </main>
+            <PageFooter />
+            <ProductAnimateCard 
+              imgUrl={
+                this.props.productListDatas.length >0
+                ? getImgAbsUrl(this.props.productListDatas[this.props.productAnimateCardIndex].coverName)
+                : ''
+              }
+            />
+          </div>
+        </ScrollToTop>
       </Router>
     );
   }
@@ -73,10 +64,6 @@ const mapDispatchToProps = dispatch => {
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);
 /*
-
-  <ol>
-    <li>Turn this app into one which does NOT use local state (in components) but instead uses Redux</li>
-  </ol>
   <ul>
     <li>
       <Link to="/photo-list">photo-list</Link>

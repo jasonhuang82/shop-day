@@ -3,7 +3,7 @@ import React,{Component} from 'react';
 import cx from 'classnames';
 
 
-export default class ProductAnimateCard extends Component {
+export default class TemplateStateComp extends Component {
   static defalutProps = {
 
   }
@@ -11,6 +11,6 @@ export default class ProductAnimateCard extends Component {
 
   }
   render() { 
-    return  <div className="ProductSection">ProductSection</div>;
+    return  <div className="TemplateStateComp">TemplateStateComp</div>;
   }
 }

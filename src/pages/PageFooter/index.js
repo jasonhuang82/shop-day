@@ -38,9 +38,13 @@ class PageFooter extends Component {
                   </a>
                 </div>
               </div>
+
+              <div className="col-12 ">
+                <h5 className="d-flex justify-content-center align-items-center">
+                  本網頁作品所載的所有資料、商標、標誌、圖像、連結及其他資料等，只供學術研究之用，不會用於任何商業用途
+                </h5>
+              </div>
             </div>
-            
-            
           </div>
       </footer>
     );
