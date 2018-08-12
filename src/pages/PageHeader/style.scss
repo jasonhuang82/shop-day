@@ -1,0 +1,70 @@
+@import '~@/styles/_utils.scss';
+
+.PageHeader{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  border-bottom: 1px solid $color-border-gray;
+  background-color: #fff;
+  z-index: 10;
+  .PageHeaderContainer{
+    display: flex;
+    // padding: 15px 0px;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  i.fa-shopping-cart{
+    transform: scale(1);
+  }
+  ul.PageHeaderInfos{
+    display: flex;
+    align-items: center;
+    position: relative;
+
+    a{
+      display: inline-block;
+      color: $color-primary-black;
+      text-decoration: none;
+      padding: 30px 15px;
+      cursor: pointer;
+    }
+
+    .PageHeaderIcon{
+      font-size: 20px;
+    }
+    .PageHeaderTitle{
+      display: none;
+    }
+    // 購物車內購買數量
+    .PageHeaderCartCount{
+      display: inline-block;
+      margin-left: 5px;
+      font-size: 1.4rem;
+    }
+
+    @include media-lg {
+      li{
+      }
+      .PageHeaderIcon {
+        margin-right: 10px;
+      }
+      .PageHeaderTitle {
+        display: inline-block;
+      }
+    }
+
+    // a 下方選取時出現亮條
+    li.PageHeaderActiveBorder{
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 50%;
+      height: 5px;
+      background-color: var(--info);
+      transition: left 0.3s;
+    }
+  }
+  
+}

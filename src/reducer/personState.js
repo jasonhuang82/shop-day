@@ -1,4 +1,4 @@
-import { PERSON_ADD,PERSON_DEL } from "../actions/actionType";
+import { PERSON_ADD,PERSON_DEL } from "@/actions/actionType";
 const initState = [];
 export default (state = initState, action) => {
   let personState = JSON.parse(JSON.stringify(state));

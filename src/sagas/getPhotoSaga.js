@@ -1,7 +1,7 @@
 import { delay } from 'redux-saga';
 import { put, takeEvery, call } from 'redux-saga/effects'
-import { getPhoto } from '../api'
-import { loadPhotoDataHandle } from "../actions";
+import { getPhoto } from '@/api'
+import { loadPhotoDataHandle } from "@/actions";
 
 
 function* getPhotoSaga() {

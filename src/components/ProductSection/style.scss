@@ -1,0 +1,37 @@
+@import '~@/styles/_utils.scss';
+
+.ProductSection {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  .ProductSectionTitle{
+    margin-bottom: 15px;
+    font-size: 2rem;
+  }
+
+  ul.ProductFilter{
+    @extend %flex-center;
+    li{
+      @extend %flex-center;
+      margin-right: 10px;
+      span.ProductFilterTitle {
+        margin-right: 5px;
+      }
+    }
+  }
+
+
+  @include media-md{
+    // pc 搜尋列
+    .ProductSectionControl{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .ProductSearch{
+        width: 40%;
+      }
+      .CustomInput {
+        margin-bottom: 0;
+      }
+    }
+  }
+}

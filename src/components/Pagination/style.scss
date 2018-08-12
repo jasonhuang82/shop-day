@@ -1,0 +1,46 @@
+@import '~@/styles/_utils.scss';
+.Pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 15px 0px;
+  // 每個頁籤基底樣式
+  > div {
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .PaginationPageCount{
+    position: relative;
+    // 頁籤數字
+    span{
+      position: relative;
+      z-index: 2;
+    }
+    // 頁籤數字active background
+    &::before{
+      content: '';
+      display: none;
+      width: 80%;
+      height: 80%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      background-color: $color-primary-black;
+      z-index: 1;
+      border-radius: 50%;
+    }
+    &.isActive{
+      // background-color: $color-primary-black;
+      color: #fff;
+      &::before{
+        display: block;
+      }
+    }
+  }
+}

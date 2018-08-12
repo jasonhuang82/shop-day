@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
+import "./style.scss";
 export class PhotoList extends Component {
 
   state = {

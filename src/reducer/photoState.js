@@ -1,4 +1,4 @@
-import { LOAD_PHOTO_DATA } from "../actions/actionType";
+import { LOAD_PHOTO_DATA } from "@/actions/actionType";
 const initState = [];
 export default (state = initState, action) => {
   let personState = JSON.parse(JSON.stringify(state));

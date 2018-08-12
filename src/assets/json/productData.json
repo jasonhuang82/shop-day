@@ -1,0 +1,196 @@
+{
+  "product": [
+    {
+      "pid": "P001",
+      "coverName": "productP001",
+      "title": "【老屋顏】鐵窗花字母紙膠帶",
+      "price": 95,
+      "discount": 1,
+      "category": "life",
+      "popular": 20
+
+    },
+    {
+      "pid": "P002",
+      "coverName": "productP002",
+      "title": "【老屋顏】鐵窗花集錦紙膠帶",
+      "price": 95,
+      "discount": 1,
+      "stock": 8,
+      "category": "life",
+      "popular": 5
+    },
+    {
+      "pid": "P003",
+      "coverName": "productP003",
+      "title": "【線加工 PUNNDLE】線水杯 手感款 灰格紋",
+      "price": 760,
+      "discount": 0.8,
+      "category": "cup",
+      "popular": 3
+    },
+    {
+      "pid": "P004",
+      "coverName": "productP004",
+      "title": "【線加工 PUNNDLE】線水杯 手感款 灰星環",
+      "price": 760,
+      "discount": 1,
+      "stock": 4,
+      "category": "cup",
+      "popular": 18
+    },
+    {
+      "pid": "P005",
+      "coverName": "productP005",
+      "title": "【小日子】 小日常素Ｔ",
+      "price": 95,
+      "discount": 0.5,
+      "stock": 3,
+      "category": "cloth",
+      "popular": 50
+    },
+
+    {
+      "pid": "P006",
+      "coverName": "productP006",
+      "title": "日出條紋T",
+      "price": 980,
+      "discount": 1,
+      "stock": 7,
+      "category": "cloth",
+      "popular": 20
+    },
+
+    {
+      "pid": "P007",
+      "coverName": "productP007",
+      "title": "全新夏季新品｜我的小灰T",
+      "price": 980,
+      "discount": 0.8,
+      "category": "cloth",
+      "popular": 15
+    },
+    {
+      "pid": "P008",
+      "coverName": "productP008",
+      "title": "小日子大學T",
+      "price": 1280,
+      "discount": 0.7,
+      "category": "cloth",
+      "popular": 69
+    },
+    {
+      "pid": "P009",
+      "coverName": "productP009",
+      "title": "新品上市｜小小日子帆布袋",
+      "price": 1280,
+      "discount": 0.6,
+      "category": "bag",
+      "popular": 75
+    },
+    {
+      "pid": "P0010",
+      "coverName": "productP0010",
+      "title": "【小日子】簡單生活-平裝綁帶筆記本",
+      "price": 249,
+      "discount": 1,
+      "category": "life",
+      "popular": 43
+    },
+    {
+      "pid": "P0011",
+      "coverName": "productP0011",
+      "title": "【夏日清爽特惠組】 金句條紋T+小小日子帆布袋",
+      "price": 1130,
+      "discount": 0.8,
+      "category": "bag",
+      "popular": 20
+    },
+    {
+      "pid": "P0012",
+      "coverName": "productP0012",
+      "title": "小日子｜全新香氛精油蠟燭 (Forest / Breeze)",
+      "price": 880,
+      "discount": 1,
+      "category": "life",
+      "popular": 36
+    },
+    {
+      "pid": "P0013",
+      "coverName": "productP0013",
+      "title": "Have a Ball 香水滾珠瓶",
+      "price": 279,
+      "discount": 1,
+      "category": "life",
+      "popular": 20
+    },
+    {
+      "pid": "P0014",
+      "coverName": "productP0014",
+      "title": "[新品上市] 小日子  深灰藍暖陽皺皺後背包",
+      "price": 1580,
+      "discount": 1,
+      "category": "bag",
+      "popular": 20
+    },
+
+    {
+      "pid": "P0015",
+      "coverName": "productP0015",
+      "title": "[新品上市] 我有病 帆布袋",
+      "price": 190,
+      "discount": 1,
+      "category": "bag",
+      "popular": 11
+    },
+    {
+      "pid": "P0016",
+      "coverName": "productP0016",
+      "title": "小日子大書袋",
+      "price": 220,
+      "discount": 0.5,
+      "category": "bag",
+      "popular": 20
+    },
+
+    {
+      "pid": "P0017",
+      "coverName": "productP0017",
+      "title": "小日子4our-You包 (共4款)",
+      "price": 1095,
+      "discount": 0.8,
+      "category": "bag",
+      "popular": 30
+    },
+    {
+      "pid": "P0018",
+      "coverName": "productP0018",
+      "title": "【兩本套組】我的宣言-萬用筆記本",
+      "price": 200,
+      "discount": 0.9,
+      "stock": 30,
+      "category": "life",
+      "popular": 90
+    },
+    {
+      "pid": "P0019",
+      "coverName": "productP0019",
+      "title": "【新品上市】第二代隨行環保杯套 (共4色)",
+      "price": 199,
+      "discount": 0.7,
+      "stock": 15,
+      "category": "cup",
+      "popular": 60
+    },
+    {
+      "pid": "P0020",
+      "coverName": "productP0020",
+      "title": "【小日子】日子的氣息-香氛精油蠟燭 (共3款)",
+      "price": 880,
+      "discount": 0.75,
+      "stock": 45,
+      "category": "life",
+      "popular": 100
+    }
+  ]
+}
