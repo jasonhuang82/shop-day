@@ -17,12 +17,17 @@ const Pagination = ({ currentPage, totlePage, onPageChange, onPrev, onNext}) => 
   }
   
   const windowScrolToTop = () => {
-    TweenLite.to(window, 0.8, {
-      scrollTo: {
-        x: 0,
-        y: 0
-      }
-    })
+    if(window.outerWidth > 992){
+      TweenLite.to(window, 0.8, {
+        scrollTo: {
+          x: 0,
+          y: 0
+        }
+      })
+    }
+    else{
+      window.scrollTo(0,0);
+    }
   };
 
   return (
