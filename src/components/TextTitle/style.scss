@@ -1,0 +1,9 @@
+@import '~@/styles/_utils.scss';
+
+.TextTitle {
+  margin-bottom: 15px;
+  border-bottom: 2px solid var(--info);
+  padding-bottom: 15px;
+  font-size: 2.4rem;
+  font-weight: normal;
+}

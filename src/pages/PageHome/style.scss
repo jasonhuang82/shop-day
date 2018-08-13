@@ -1,3 +1,8 @@
 .PageHome {
-  
+  // 將 PageHome 中所有col下方保留margin-bottom
+  @for $i from 1 through 12 {
+    .col-#{$i} {
+      margin-bottom: 40px;
+    }
+  }
 }

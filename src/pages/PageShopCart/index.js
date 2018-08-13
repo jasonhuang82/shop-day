@@ -1,9 +1,12 @@
 import React, { Component,Fragment } from 'react';
 import { connect } from 'react-redux';
-import cx from "classnames";
+// import cx from "classnames";
 // redux action create
 import { delFromCart } from "@/actions";
 import ShopCartList from "@/components/ShopCartList";
+import CustomButton from '@/components/CustomButton';
+import AlertMessage from '@/components/AlertMessage';
+import TextTitle from '@/components/TextTitle';
 
 import "./style.scss";
 
@@ -25,8 +28,7 @@ class PageShopCart extends Component {
     return (
       <div className="PageShopCart">
         <div className="container">
-          <div className="PageShopCartTitle">購物清單</div>
-          
+          <TextTitle title="購物清單"/>
           {this.props.shopCart.length > 0 
             ? (
               <Fragment>
@@ -38,15 +40,24 @@ class PageShopCart extends Component {
                   <div className="PageShopCartTotalNum">目前購物車有{this.props.shopCart.length}項</div>
                   <div className="PageShopCartTotalPrice">總金額：{this.countTotalPrice()}</div>
                 </div>
+                <div className="PageShopCartNextBtn">
+                  <CustomButton
+                    title="去結帳"
+                    className={['btn-info']}
+                    onClick={e => this.props.history.push({ 
+                      pathname: '/customerInfos',
+                      search: this.props.location.search
+                  })}
+                  />
+                </div>
               </Fragment>
             )
             : (
-              <div className="PageShopCartNoProduct">
-                <div className="PageShopCartNoProductTitle">目前還沒有選購商品哦</div>
-                <div className="PageShopCartNoProductIcon">
-                  <i className="PageShopCartNoProductIcon far fa-angry"></i>
-                </div>
-              </div>
+              <AlertMessage
+                text="目前還沒有選購商品哦"
+                className={['PageShopCartNotProduct']}
+                iconClass={['far','fa-angry']}
+              />
             )
           }
         </div>

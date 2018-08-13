@@ -1,11 +1,11 @@
-import React, { Component,Fragment } from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { 
   BrowserRouter as Router,
   Route,
   Switch,
-  Redirect,
-  withRouter
+  // Redirect,
+  // withRouter
 } from "react-router-dom";
 import { getImgAbsUrl } from '@/config/reUseMethod';
 
@@ -14,12 +14,15 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 // self scss
 import "@/styles/global.scss";
 // self component
-import ScrollToTop from '@/components/ScrollToTop';
+
 import PageHome from '@/pages/PageHome';
 import PageShopCart from '@/pages/PageShopCart';
+import PageCustomerInfos from '@/pages/PageCustomerInfos';
 import PageFooter from '@/pages/PageFooter';
 import PageHeader from '@/pages/PageHeader';
+import ScrollToTop from '@/components/ScrollToTop';
 import ProductAnimateCard from '@/components/ProductAnimateCard';
+import AlertMessage from '@/components/AlertMessage';
 
 class App extends Component {
   
@@ -33,7 +36,14 @@ class App extends Component {
               <Switch>
                 <Route exact path="/" component={PageHome} />
                 <Route path="/shopcart" component={PageShopCart} />
-                <Route path="*" render={props => <div>404</div>}/>
+                <Route path="/customerInfos" component={PageCustomerInfos} />
+                <Route path="*" render={props => (
+                  <AlertMessage
+                    text="頁面連接錯誤"
+                    iconClass={['far','fa-frown']}
+                    className={['PageContentNotFound']}
+                  />
+                )}/>
               </Switch>
             </main>
             <PageFooter />

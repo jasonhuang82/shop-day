@@ -25,12 +25,7 @@ ul{
   list-style: none;
 }
 
-// 將所有col下方保留margin-bottom
-@for $i from 1 through 12{
-  .col-#{$i}{
-    margin-bottom: 40px;
-  }
-}
+
 
 .App{
   // 為了讓內容不夠時不要讓網頁下方有留白，
@@ -42,5 +37,15 @@ ul{
 
 .PageContent{
   flex-grow: 1;
-  padding-top: 85px;
+  position: relative;
+  // 保留上下的空間留白
+  padding-top: 115px;
+  padding-bottom: 30px;
+
+  // 找不到頁面
+  .PageContentNotFound {
+    @extend %ab-center;
+    width: 100%;
+    top: 60%;
+  }  
 }

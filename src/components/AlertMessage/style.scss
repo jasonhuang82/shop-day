@@ -1,0 +1,19 @@
+@import '~@/styles/_utils.scss';
+
+.AlertMessage {
+  // 沒有商品時提示字串
+  @extend %flex-center;
+  color: #bbb;
+  flex-flow: row wrap;
+  font-size: 2rem;
+  font-weight: normal;
+  user-select: none;
+  >div {
+    width: 100%;
+    text-align: center;
+  }
+  .AlertMessageIcon {
+    font-size: 7rem;
+  }
+  
+}

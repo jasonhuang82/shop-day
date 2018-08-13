@@ -1,0 +1,17 @@
+@import '~@/styles/_utils.scss';
+.PageCustomerInfos {
+  select.form-control:not([size]):not([multiple]){
+    height: auto;
+  }
+  .form-control{
+      padding: 5px 10px;
+      font-size: 1.4rem;
+  }
+
+  section.PageCustomerInfosForm{
+    @include media-md{
+      width: 70%;
+      margin: 0 auto;
+    }
+  }
+}
