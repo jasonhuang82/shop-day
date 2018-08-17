@@ -17,6 +17,7 @@ var memberRouter = require('./routes/member');
 var productRouter = require('./routes/product');
 
 var app = express();
+app.set('trust proxy',1);
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -36,9 +37,13 @@ app.use(bodyParser.urlencoded({
 app.use(bodyParser.json());
 
 app.use(cookieParser());
+
 app.use(session({
   secret: 'hubwiz app', //secret的值建议使用随机字符串
+  resave: true,
+  saveUninitialized: true,
   cookie: {
+    secure: true,
     maxAge: 1000 * 60 * 30
   } // 过期时间（毫秒）
 }));

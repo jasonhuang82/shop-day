@@ -112,6 +112,12 @@ const writeJson = (dataBaseName, callBack) => {
 // more routes for our API will happen here
 // 會員API
 router.post('/', function (req, res) {
+
+  console.log('====================================');
+  console.log('req.session.name', req.session.name);
+  console.log('====================================');
+  req.session.name = 2;
+  req.session.save();
   // 讀檔測試
   // readJson('userDatas')
   // .then(res => {
@@ -119,8 +125,8 @@ router.post('/', function (req, res) {
   // })
   let cookiesSessionKey = req.body.hasOwnProperty('cookiesSessionKey') ? req.body.cookiesSessionKey : undefined;
   let token = req.session[cookiesSessionKey];
-  console.log('cookiesSessionKey', cookiesSessionKey);
-  console.log('req.session', req.session);
+  // console.log('cookiesSessionKey', cookiesSessionKey);
+  // console.log('req.session', req.session);
 
   if (
     cookiesSessionKey !== '' &&
@@ -138,11 +144,11 @@ router.post('/', function (req, res) {
 
     let userId = tokenTable.find(item => item.token.toString() === token.toString()).userId;
     let userName = userDatas.find(item => item.id.toString() === userId.toString()).userName;
-    console.log('====================================');
-    console.log('tokenTable', tokenTable);
+    // console.log('====================================');
+    // console.log('tokenTable', tokenTable);
 
-    console.log('userName', userName);
-    console.log('====================================');
+    // console.log('userName', userName);
+    // console.log('====================================');
     if (userId) {
       responseJson(res, {
         userName
@@ -193,10 +199,10 @@ router.post('/', function (req, res) {
       token = shaHash(Date.now() + userName + passWord);
       req.session[sessionKey] = token;
       // req.cookies[COOKIE_SHOP_DAY] = sessionKey;
-      console.log('====================================');
-      console.log('sessionKey', req.session);
+      // console.log('====================================');
+      // // console.log('sessionKey', req.session);
 
-      console.log('====================================');
+      // console.log('====================================');
       tokenTable.push(createTokenObj(token, userId));
       responseJson(res, {
         token,
