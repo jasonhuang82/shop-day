@@ -25,6 +25,15 @@ ul{
   list-style: none;
 }
 
+input,select{
+  outline: none !important;
+  box-shadow: none !important;
+  &.form-control{
+    &,&:focus{
+      border-color: $color-border-darken-gray;
+    }
+  }
+}
 
 
 .App{

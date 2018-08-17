@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 // self components
 import TextTitle from '@/components/TextTitle';
+import CustomButton from '@/components/CustomButton';
 import "./style.scss";
 
 class PageCustomerInfos extends Component {
@@ -10,8 +11,15 @@ class PageCustomerInfos extends Component {
     
   };
   componentDidMount() {
-      console.log('match',this.props.match);
+      console.log('match',this.props);
       
+  }
+
+  vailFormData = e => {
+    // this.props.history.push({
+    //   pathname: '',
+    //   params: {}
+    // });
   }
   render () {
     return (
@@ -27,13 +35,23 @@ class PageCustomerInfos extends Component {
                   <input type="email" className="form-control" id="customName" placeholder="請輸入姓名"/>
                 </div>
               </div>
+              {/* 姓名 end*/}
+              {/* 手機號碼 */}
               <div className="col-6">
                 <div className="form-group">
-                  <label htmlFor="customName">姓名</label>
-                  <input type="email" className="form-control" id="customName" placeholder="請輸入姓名" />
+                  <label htmlFor="customName">手機號碼</label>
+                  <input type="email" className="form-control" id="customName" placeholder="請輸入手機號碼" />
                 </div>
               </div>
-              {/* 姓名 end*/}
+              {/* 手機號碼 end*/}
+              {/* E-mail */}
+              <div className="col-6">
+                <div className="form-group">
+                  <label htmlFor="customName">E-mail</label>
+                  <input type="email" className="form-control" id="customName" placeholder="請輸入手機號碼" />
+                </div>
+              </div>
+              {/* E-mail end*/}
               {/* 生日 */}
               <div className="col-12">
                 <div className="form-group">
@@ -71,7 +89,7 @@ class PageCustomerInfos extends Component {
               </div>
               {/* 生日 end */}
               {/* 地址 */}
-              <div className="col-12">
+              <div className="col-12 PageCustomerInfosAddress">
                 {/* top */}
                 <div className="form-group">
                   <label>地址</label>
@@ -97,11 +115,24 @@ class PageCustomerInfos extends Component {
                   </div>
                 </div>
                 {/* bottom */}
-                <div className="form-group pt-3">
+                <div className="form-group PageCustomerInfosAddressDetail">
                   <input type="email" className="form-control" id="customName" placeholder="請輸入詳細地址" />
                 </div>
               </div>
               {/* 地址 end*/}
+            </div>
+            <div className="PageCustomerInfosChangePage">
+              <CustomButton
+                title="上一步"
+                className={['btn-info']}
+                onClick={e => this.props.history.go(-1)}
+              />
+              <CustomButton
+                title="結帳"
+                className={['btn-info']}
+                onClick={this.vailFormDatae}
+                disabled={true}
+              />
             </div>
           </section>
         </div>

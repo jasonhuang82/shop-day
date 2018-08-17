@@ -8,10 +8,32 @@
       font-size: 1.4rem;
   }
 
+  // form 表單
   section.PageCustomerInfosForm{
+    &{
+      padding-top: 20px;
+    }
+
     @include media-md{
       width: 70%;
       margin: 0 auto;
+    }
+  }
+  // form 表單 詳細地址
+  .PageCustomerInfosAddressDetail{
+    padding-top: 15px;
+  }
+  // 表單下方下一頁
+  .PageCustomerInfosChangePage{
+    display: flex;
+    justify-content: center;
+    > .CustomButton{
+      display: inline-block;
+      width: auto;
+      letter-spacing: 2px;
+      +.CustomButton{
+        margin-left: 30px;
+      }
     }
   }
 }
