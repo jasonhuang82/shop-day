@@ -1,11 +1,11 @@
-import React, { Component,Fragment } from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { 
   BrowserRouter as Router,
   Route,
   Switch,
-  Redirect,
-  withRouter
+  // Redirect,
+  // withRouter
 } from "react-router-dom";
 import { getImgAbsUrl } from '@/config/reUseMethod';
 
@@ -14,26 +14,34 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 // self scss
 import "@/styles/global.scss";
 // self component
-import ScrollToTop from '@/components/ScrollToTop';
+
 import PageHome from '@/pages/PageHome';
 import PageShopCart from '@/pages/PageShopCart';
+// import PageCustomerInfos from '@/pages/PageCustomerInfos';
 import PageFooter from '@/pages/PageFooter';
 import PageHeader from '@/pages/PageHeader';
+import ScrollToTop from '@/components/ScrollToTop';
 import ProductAnimateCard from '@/components/ProductAnimateCard';
+// import AlertMessage from '@/components/AlertMessage';
 
+
+import MemberVail from '@/components/MemberVail';
 class App extends Component {
+  componentDidMount = async () => {
+    
+  }
   
   render() {
     return (
       <Router basename={process.env.PUBLIC_URL}>
         <ScrollToTop>
           <div className="App">
+            <MemberVail/>
             <PageHeader />
             <main className="PageContent">
               <Switch>
                 <Route exact path="/" component={PageHome} />
                 <Route path="/shopcart" component={PageShopCart} />
-                <Route path="*" render={props => <div>404</div>}/>
               </Switch>
             </main>
             <PageFooter />
